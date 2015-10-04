@@ -1,9 +1,31 @@
 @(message: String)
 
 @main("Welcome to Play 2.1") {
-  @play20.welcome(message, style = "Java")
-  
-  ハノイの塔
-  <input type="button" value="&lt; -">
-  <input type="button" value="- &gt;">
+    @play20.welcome(message, style = "Java")
+    <script src="@routes.Assets.at("javascripts/index.js")" type="text/javascript"></script>
+    ハノイの塔
+    <table>
+        <tr>
+            <td width="50" align="center">
+                &nbsp;
+            </td>
+            <td width="50" align="center">
+                <input type="button" width="30" value="-&gt;"><br>
+                <input type="button" width="30" value="-&gt;-&gt;">
+            </td>
+            <td width="50" align="center">
+                <input type="button" width="30" value="&lt;-">
+            </td>
+            <td>
+                <input type="button" width="30" value="-&gt;">
+            </td>
+            <td width="50" align="center">
+                <input type="button" width="30" value="&lt;-"><br>
+                <input type="button" width="30" value="&lt;-&lt;-">
+            </td>
+            <td width="50" align="center">
+                &nbsp;
+            </td>
+        </tr>
+    </table>
 }
