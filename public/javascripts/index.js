@@ -6,7 +6,7 @@ function move() {
  * 移動ボタンのdisabled設定
  */
 function setBottons() {
-  $("#dishA").prop("disabled", false);
+  $("#btnAB").prop("disabled", false);
 }
 
 function start() {
