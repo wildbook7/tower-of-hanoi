@@ -27,7 +27,7 @@ function setBottons() {
 
 function start() {
   // dishAに設定し、ゲーム開始
-  $("#dishA").val("1234");
+  $("#dishA").val("12345");
   $("#dishB").val("");
   $("#dishC").val("");
   setBottons();
