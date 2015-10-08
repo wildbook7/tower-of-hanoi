@@ -11,12 +11,15 @@ function move(btn) {
  * 移動ボタンのdisabled設定
  */
 function setBottons() {
-  $("#btnAB").prop("disabled", $("#dishA").val() == "");
-  $("#btnAC").prop("disabled", $("#dishA").val() == "");
-  $("#btnBA").prop("disabled", $("#dishB").val() == "");
-  $("#btnBC").prop("disabled", $("#dishB").val() == "");
-  $("#btnCA").prop("disabled", $("#dishC").val() == "");
-  $("#btnCB").prop("disabled", $("#dishC").val() == "");
+  var a = $("#dishA").val().substr(0,1);
+  var b = $("#dishB").val().substr(0,1);
+  var c = $("#dishC").val().substr(0,1);
+  $("#btnAB").prop("disabled", (a == "" || a > b);
+  $("#btnAC").prop("disabled", (a == "" || a > c);
+  $("#btnBC").prop("disabled", (b == "" || b > c);
+  $("#btnBA").prop("disabled", (b == "" || b > a);
+  $("#btnCA").prop("disabled", (c == "" || c > a);
+  $("#btnCB").prop("disabled", (c == "" || c > b);
 }
 
 function start() {
