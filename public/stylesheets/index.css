@@ -1,0 +1,12 @@
+input.dish {
+  font-size: 75%;
+  text-align: center;
+  width: 100%
+}
+input.layer {
+  background-color: #fff799;
+  border-color: #ece093;
+}
+input.nothing {
+  border: none;
+}
