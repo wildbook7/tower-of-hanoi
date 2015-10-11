@@ -5,6 +5,7 @@ function move(btn) {
   $(tgt).val($(src).val().substr(0, 1) + $(tgt).val());
   $(src).val($(src).val().substr(1));
   setBottons();
+  setLayers();
 }
 
 /**
@@ -25,10 +26,31 @@ function setBottons() {
   $("#btnCB").prop("disabled", (c >= b));
 }
 
+/**
+ * スポンジケーキの表示
+ */
+function setLayers() {
+  $.each(["A", "B" ,"C"], function(index, value) {
+    var dishValue = $("#dish" + value).val();
+    var layerSize;
+    for(var layer = 1; layer <= 5; layer++) {
+      layerSize = dishValue.substr(-1);
+      if (layerSize == "") {
+        $("#layer"+ value + layer).attr("class", "nothing");
+      } else {
+        $("#layer"+ value + layer).attr("class", "layer");
+        $("#layer"+ value + layer).css("width", layerSize + "0%");
+      }
+      dishValue = dishValue.substr(0, dishValue.length - 1);
+    }
+  });
+}
+
 function start() {
   // dishAに設定し、ゲーム開始
   $("#dishA").val("12345");
   $("#dishB").val("");
   $("#dishC").val("");
   setBottons();
+  setLayers();
 }

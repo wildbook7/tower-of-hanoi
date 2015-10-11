@@ -1,10 +1,13 @@
 @(message: String)
 
-@main("Welcome to Play 2.1") {
-    @play20.welcome(message, style = "Java")
+@main("ハノイの塔") {
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/index.css")">
     <script src="@routes.Assets.at("javascripts/index.js")" type="text/javascript"></script>
-    ハノイの塔
-    <table border="0" cellspacing="0" cellpadding="0">
+    <a href="https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%8E%E3%82%A4%E3%81%AE%E5%A1%94">ハノイの塔</a>
+    といわれるパズルゲームです。<br>
+    <h2>スポンジケーキを一番右の皿に移動しよう！</h2>
+    <br>
+    <table border="0px" cellspacing="0px" cellpadding="0px">
         <tr>
             <td width="80">&nbsp;</td>
             <td width="80">&nbsp;</td>
@@ -13,36 +16,38 @@
             <td width="80">&nbsp;</td>
             <td width="80">&nbsp;</td>
         </tr>
-        <tr>
-            <td colspan="2" align="center"><input type="text" id="layerA5" style="width:0%" class="layer"></td>
-            <td colspan="2" align="center"><input type="text" id="layerB5" style="width:0%"></td>
-            <td colspan="2" align="center"><input type="text" id="layerC5" style="width:0%"></td>
+        <tr height="21px">
+            <td colspan="2" align="center"><input type="text" id="layerA5" readonly style="width:0%" class="nothing"></td>
+            <td colspan="2" align="center"><input type="text" id="layerB5" readonly style="width:0%"></td>
+            <td colspan="2" align="center"><input type="text" id="layerC5" readonly style="width:0%"></td>
         </tr>
-        <tr>
-            <td colspan="2" align="center"><input type="text" id="layerA4" style="width:0%" class="layer"></td>
-            <td colspan="2" align="center"><input type="text" id="layerB4" style="width:0%"></td>
-            <td colspan="2" align="center"><input type="text" id="layerC4" style="width:0%"></td>
+        <tr height="21px">
+            <td colspan="2" align="center"><input type="text" id="layerA4" readonly style="width:0%" class="nothing"></td>
+            <td colspan="2" align="center"><input type="text" id="layerB4" readonly style="width:0%"></td>
+            <td colspan="2" align="center"><input type="text" id="layerC4" readonly style="width:0%"></td>
         </tr>
-        <tr>
-            <td colspan="2" align="center"><input type="text" id="layerA3" style="width:10%" class="layer"></td>
-            <td colspan="2" align="center"><input type="text" id="layerB3" style="width:0%"></td>
-            <td colspan="2" align="center"><input type="text" id="layerC3" style="width:0%"></td>
+        <tr height="21px">
+            <td colspan="2" align="center"><input type="text" id="layerA3" readonly style="width:10%" class="layer"></td>
+            <td colspan="2" align="center"><input type="text" id="layerB3" readonly style="width:0%"></td>
+            <td colspan="2" align="center"><input type="text" id="layerC3" readonly style="width:0%"></td>
         </tr>
-        <tr>
-            <td colspan="2" align="center"><input type="text" id="layerA2" style="width:30%" class="layer"></td>
-            <td colspan="2" align="center"><input type="text" id="layerB2" style="width:0%"></td>
-            <td colspan="2" align="center"><input type="text" id="layerC2" style="width:0%"></td>
+        <tr height="21px">
+            <td colspan="2" align="center"><input type="text" id="layerA2" readonly style="width:30%" class="layer"></td>
+            <td colspan="2" align="center"><input type="text" id="layerB2" readonly style="width:0%"></td>
+            <td colspan="2" align="center"><input type="text" id="layerC2" readonly style="width:0%"></td>
         </tr>
-        <tr>
-            <td colspan="2" align="center"><input type="text" id="layerA1" style="width:50%" class="layer"></td>
-            <td colspan="2" align="center"><input type="text" id="layerB1" style="width:0%"></td>
-            <td colspan="2" align="center"><input type="text" id="layerC1" style="width:0%"></td>
+        <tr height="21px">
+            <td colspan="2" align="center"><input type="text" id="layerA1" readonly style="width:50%" class="layer"></td>
+            <td colspan="2" align="center"><input type="text" id="layerB1" readonly style="width:0%"></td>
+            <td colspan="2" align="center"><input type="text" id="layerC1" readonly style="width:0%"></td>
         </tr>
+        <font size="1">
         <tr>
-            <td colspan="2"><input type="text" id="dishA" value="" style="text-align:right"></td>
-            <td colspan="2"><input type="text" id="dishB" value="" style="text-align:right"></td>
-            <td colspan="2"><input type="text" id="dishC" value="" style="text-align:right"></td>
+            <td colspan="2" align="center"><input type="text" id="dishA" value="" class="dish"></td>
+            <td colspan="2" align="center"><input type="text" id="dishB" value="" class="dish"></td>
+            <td colspan="2" align="center"><input type="text" id="dishC" value="" class="dish"></td>
         </tr>
+        </font>
         <tr>
             <td align="center">
                 &nbsp;
