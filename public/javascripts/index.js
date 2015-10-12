@@ -33,10 +33,11 @@ function setLayers() {
   $.each(["A", "B" ,"C"], function(index, value) {
     var dishValue = $("#dish" + value).val();
     var layerSize;
-    for(var layer = 1; layer <= 5; layer++) {
+    for(var layer = 1; layer <= 6; layer++) {
       layerSize = dishValue.substr(-1);
       if (layerSize == "") {
         $("#layer"+ value + layer).attr("class", "nothing");
+        $("#layer"+ value + layer).css("width", layerSize + "30%");
       } else {
         $("#layer"+ value + layer).attr("class", "layer");
         $("#layer"+ value + layer).css("width", layerSize + "0%");
@@ -44,11 +45,16 @@ function setLayers() {
       dishValue = dishValue.substr(0, dishValue.length - 1);
     }
   });
+  
+  // イチゴの表示
+  if ($("#dishA").val() == "" && $("#dishB").val() == "") {
+    $("#layerC" + ($("#dishC").val().length + 1)).attr("class", "strawberry");
+  }
 }
 
 function start() {
   // dishAに設定し、ゲーム開始
-  $("#dishA").val("12345");
+  $("#dishA").val("1234");
   $("#dishB").val("");
   $("#dishC").val("");
   setBottons();
