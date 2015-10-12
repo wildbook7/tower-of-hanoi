@@ -1,3 +1,7 @@
+input:disabled {
+  background-color: #cccccc;
+  background-image: none;
+}
 input.dish {
   font-size: 75%;
   text-align: center;

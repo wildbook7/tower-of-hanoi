@@ -1,3 +1,10 @@
+/**
+ * ページ構築後に実行する処理
+ */
+$(function() {
+  start();
+});
+
 function move(btn) {
   // ボタンIDを基準に移動
   var src = "#dish" + btn.id.substr(3, 1);
