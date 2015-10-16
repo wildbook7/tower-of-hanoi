@@ -3,6 +3,12 @@ input:disabled {
   background-image: none;
 }
 input.dish {
+  background-image: url("/assets/images/dish.png");
+  background-position-x: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
   font-size: 75%;
   text-align: center;
   width: 100%

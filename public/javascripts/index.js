@@ -7,7 +7,7 @@ $(function() {
 
 function beTransparent() {
   if ($("#chkTransparent").prop("checked")) {
-    $(".dish").css("color", "white");
+    $(".dish").css("color", "#b5e61d");
   } else {
     $(".dish").css("color", "initial");
   }
