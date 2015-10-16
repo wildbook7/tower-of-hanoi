@@ -5,6 +5,15 @@ $(function() {
   start();
 });
 
+function beTransparent() {
+  if ($("#chkTransparent").prop("checked")) {
+    $(".dish").css("color", "white");
+  } else {
+    $(".dish").css("color", "initial");
+  }
+  setLayers();
+}
+
 function move(btn) {
   // ボタンIDを基準に移動
   var src = "#dish" + btn.id.substr(3, 1);
@@ -37,12 +46,14 @@ function setBottons() {
  * スポンジケーキの表示
  */
 function setLayers() {
+  var transparentFlag = $("#chkTransparent").prop("checked");
+  
   $.each(["A", "B" ,"C"], function(index, value) {
     var dishValue = $("#dish" + value).val();
     var layerSize;
     for(var layer = 1; layer <= 6; layer++) {
       layerSize = dishValue.substr(-1);
-      if (layerSize == "") {
+      if (transparentFlag || layerSize == "") {
         $("#layer"+ value + layer).attr("class", "nothing");
         $("#layer"+ value + layer).css("width", layerSize + "30%");
       } else {
