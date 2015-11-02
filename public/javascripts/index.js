@@ -1,28 +1,31 @@
 /**
- * ページ構築後に実行する処理
+ * readyイベント
  */
 $(function() {
+  // 初期化
   start();
+  
+  // 移動ボタン
+  $("#btnAB").click(function() {move("btnAB");});
+  $("#btnAC").click(function() {move("btnAC");});
+  $("#btnBA").click(function() {move("btnBA");});
+  $("#btnBC").click(function() {move("btnBC");});
+  $("#btnCB").click(function() {move("btnCB");});
+  $("#btnCA").click(function() {move("btnCA");});
+  
+  // はじめからボタン
+  $("#btnSTART").click(start);
+  
+  // ケーキを透明にするボタン
+  $("#chkTransparent").click(function() {
+    if ($("#chkTransparent").prop("checked")) {
+      $(".dish").css("color", "#b5e61d");
+    } else {
+      $(".dish").css("color", "initial");
+    }
+    setLayers();
+  });
 });
-
-function beTransparent() {
-  if ($("#chkTransparent").prop("checked")) {
-    $(".dish").css("color", "#b5e61d");
-  } else {
-    $(".dish").css("color", "initial");
-  }
-  setLayers();
-}
-
-function move(btn) {
-  // ボタンIDを基準に移動
-  var src = "#dish" + btn.id.substr(3, 1);
-  var tgt = "#dish" + btn.id.substr(4, 1);
-  $(tgt).val($(src).val().substr(0, 1) + $(tgt).val());
-  $(src).val($(src).val().substr(1));
-  setBottons();
-  setLayers();
-}
 
 /**
  * 移動ボタンのdisabled設定
@@ -70,11 +73,25 @@ function setLayers() {
   }
 }
 
+/**
+ * dishAに設定し、ゲーム開始
+ */
 function start() {
-  // dishAに設定し、ゲーム開始
   $("#dishA").val("1234");
   $("#dishB").val("");
   $("#dishC").val("");
+  setBottons();
+  setLayers();
+}
+
+/**
+ * ボタンIDを基準に移動
+ */
+function move(btnId) {
+  var src = "#dish" + btnId.substr(3, 1);
+  var tgt = "#dish" + btnId.substr(4, 1);
+  $(tgt).val($(src).val().substr(0, 1) + $(tgt).val());
+  $(src).val($(src).val().substr(1));
   setBottons();
   setLayers();
 }
