@@ -1,3 +1,5 @@
+(function() {
+
 /**
  * readyイベント
  */
@@ -16,7 +18,7 @@ $(function() {
   // はじめからボタン
   $("#btnSTART").click(start);
   
-  // ケーキを透明にするボタン
+  // ケーキを透明にするオプション
   $("#chkTransparent").click(function() {
     if ($("#chkTransparent").prop("checked")) {
       $(".dish").css("color", "#b5e61d");
@@ -74,7 +76,7 @@ function setLayers() {
 }
 
 /**
- * dishAに設定し、ゲーム開始
+ * dishAにケーキを設定し、ゲーム開始
  */
 function start() {
   $("#dishA").val("1234");
@@ -95,3 +97,5 @@ function move(btnId) {
   setBottons();
   setLayers();
 }
+
+}).call(this);
