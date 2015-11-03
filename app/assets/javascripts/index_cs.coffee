@@ -6,12 +6,12 @@ $ ->
   start()
   
   # 移動ボタン
-  $("#btnAB").click -> move("btnAB")
-  $("#btnAC").click -> move("btnAC")
-  $("#btnBA").click -> move("btnBA")
-  $("#btnBC").click -> move("btnBC")
-  $("#btnCB").click -> move("btnCB")
-  $("#btnCA").click -> move("btnCA")
+  $("#btnAB").click -> move(@)
+  $("#btnAC").click -> move(@)
+  $("#btnBA").click -> move(@)
+  $("#btnBC").click -> move(@)
+  $("#btnCB").click -> move(@)
+  $("#btnCA").click -> move(@)
   
   # はじめからボタン
   $("#btnSTART").click -> start()
@@ -76,9 +76,9 @@ start = ->
 ###
 ボタンIDを基準に移動
 ###
-move = (btnId) ->
-  src = "#dish" + btnId.substr(3, 1)
-  tgt = "#dish" + btnId.substr(4, 1)
+move = (btn) ->
+  src = "#dish" + btn.id.substr(3, 1)
+  tgt = "#dish" + btn.id.substr(4, 1)
   $(tgt).val($(src).val().substr(0, 1) + $(tgt).val())
   $(src).val($(src).val().substr(1))
   setBottons()
