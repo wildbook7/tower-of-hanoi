@@ -1,0 +1,13 @@
+language.to=日本語
+title=Tower of Hanoi
+description1=This is a puzzle game that is said to&nbsp;
+description2=.
+link.wikipedia=https://en.wikipedia.org/wiki/Tower_of_Hanoi
+header=Let''s move the sponge cake to the right dish!
+dish.right=the right dish
+restart=RESTART
+transparent=Make the cake transparent
+rules=Rules
+rule1=When you press the button of the arrow, you can move one layer of the cake to another dish.
+rule2=When you press the button of two arrows, you can move one layer of the cake to the dish of the other end.
+rule3=You can not put the larger layer on smaller layer.

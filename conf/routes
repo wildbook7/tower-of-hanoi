@@ -4,6 +4,7 @@
 
 # Home page
 GET     /                           controllers.Application.index()
+GET     /changeLanguage             controllers.Application.changeLanguage()
 GET     /index_coffeescript         controllers.Application.index_coffeescript()
 
 # Map static resources from the /public folder to the /assets URL path

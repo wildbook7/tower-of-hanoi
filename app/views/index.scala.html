@@ -1,12 +1,15 @@
-@(message: String)
+@(lang:String)
+@import play.i18n._
+@msg(key:String)=@{Html(Messages.get(Lang.forCode(lang), key))}
 
-@main("ハノイの塔") {
+@main(Messages.get(Lang.forCode(lang), "title")) {
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/index.css")">
     <script src="@routes.Assets.at("javascripts/index.js")" type="text/javascript"></script>
-    <a href="https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%8E%E3%82%A4%E3%81%AE%E5%A1%94">ハノイの塔</a>
-    といわれるパズルゲームです。<br>
+    @msg("description1")<a href="@msg("link.wikipedia")">@msg("title")</a>@msg("description2")
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="button" id="btnLANGUAGE" style="font-size: 10px;" value="@msg("language.to")"><br>
     <h2>
-        スポンジケーキを一番右の皿に移動しよう！
+        @msg("header")
         <img src="/assets/images/strawberry.png" width="1%" height="1%" style="visibility:hidden">
     </h2>
     <br>
@@ -76,26 +79,26 @@
             </td>
             <td align="center" valign="top">
                 <font color="blue" size="2">
-                  ↑<br>一番右の皿
+                  ↑<br>@msg("dish.right")
                 </font>
             </td>
         </tr>
         <tr>
             <td colspan="6">
-                <input type="button" id="btnSTART" style="width:100%" value="はじめから">
+                <input type="button" id="btnSTART" style="width:100%" value="@msg("restart")">
             </td>
         </tr>
         <tr>
             <td colspan="6" align="right">
                 <br>
-                <label><input type="checkbox" id="chkTransparent">ケーキを透明にする</label>
+                <label><input type="checkbox" id="chkTransparent">@msg("transparent")</label>
             </td>
         </tr>
     </table>
     <br>
-    【ルール】<br>
-    &nbsp;&nbsp;・&nbsp;矢印のボタンを押すと、べつの皿に一つ移動できます。<br>
-    &nbsp;&nbsp;・&nbsp;二つ矢印のボタンは、となりの皿をとびこえて移動できます。<br>
-    &nbsp;&nbsp;・&nbsp;サイズの大きいものを上にのせることはできません。<br>
+    【@msg("rules")】<br>
+    &nbsp;&nbsp;・&nbsp;@msg("rule1")<br>
+    &nbsp;&nbsp;・&nbsp;@msg("rule2")<br>
+    &nbsp;&nbsp;・&nbsp;@msg("rule3")<br>
     &nbsp;
 }

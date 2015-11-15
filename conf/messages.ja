@@ -1,0 +1,13 @@
+language.to=English
+title=ハノイの塔
+description1=
+description2=といわれるパズルゲームです。
+link.wikipedia=https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%8E%E3%82%A4%E3%81%AE%E5%A1%94
+header=スポンジケーキを一番右の皿に移動しよう！
+dish.right=一番右の皿
+restart=はじめから
+transparent=ケーキを透明にする
+rules=ルール
+rule1=矢印のボタンを押すと、べつの皿に一つ移動できます。
+rule2=二つ矢印のボタンは、となりの皿をとびこえて移動できます。
+rule3=サイズの大きいものを上にのせることはできません。

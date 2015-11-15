@@ -15,6 +15,9 @@ $(function() {
   $("#btnCB").click(function() {move("btnCB");});
   $("#btnCA").click(function() {move("btnCA");});
   
+  // 言語変更ボタン
+  $("#btnLANGUAGE").click(changeLanguage);
+  
   // はじめからボタン
   $("#btnSTART").click(start);
   
@@ -73,6 +76,13 @@ function setLayers() {
   if ($("#dishA").val() == "" && $("#dishB").val() == "") {
     $("#layerC" + ($("#dishC").val().length + 1)).attr("class", "strawberry");
   }
+}
+
+/**
+ * 言語変更した画面を再表示
+ */
+function changeLanguage() {
+  location.href = "/changeLanguage";
 }
 
 /**
